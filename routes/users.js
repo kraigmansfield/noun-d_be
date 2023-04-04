@@ -3,7 +3,7 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt')
 
 // Register a user
-router.post('https://noun-d-be.herokuapp.com/api/users/register', async(req,res) => {
+router.post('https://git.heroku.com/noun-d-be.git/api/users/register', async(req,res) => {
     try{
 
         //Make a password
@@ -29,7 +29,7 @@ router.post('https://noun-d-be.herokuapp.com/api/users/register', async(req,res)
 })
 
 // Login as a user
-router.post('https://noun-d-be.herokuapp.com/api/users/login', async(req,res) => {
+router.post('https://git.heroku.com/noun-d-be.git/api/users/login', async(req,res) => {
     try{
         const user = await User.findOne({username:req.body.username})
 
