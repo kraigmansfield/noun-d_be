@@ -3,7 +3,7 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt')
 
 // Register a user
-router.post('https://noun-d-be.herokuapp.com//api/users/register', async(req,res) => {
+router.post('https://noun-d-be.herokuapp.com/api/users/register', async(req,res) => {
     try{
 
         //Make a password
