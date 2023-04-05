@@ -10,12 +10,15 @@ app.use(express.json());
 
 env.config()
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/cluster0',
+mongoose.connect(process.env.MONGO_CONNECTION_STRING,
 {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 },
     )
+    .then(() => {
+        console.log('[SUCCESS] Mongo Connected')
+    })
 
 app.use('/api/pins',pinRoute)
 app.use('/api/users',userRoute)
