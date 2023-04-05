@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const pinRoute = require('./routes/pins')
 const userRoute = require('./routes/users')
-const dotenv = require('dotenv').config()
+const env = require('dotenv').config()
 
 const cors = require('cors')
 const dotenv = require('dotenv')
