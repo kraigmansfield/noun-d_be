@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const env = require('dotenv');
 const pinRoute = require('./routes/pins')
 const userRoute = require('./routes/users')
-
+const cors = require('cors')
 
 const app = express();
 app.use(express.json());
@@ -22,6 +22,7 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING,
 
 app.use('/api/pins',pinRoute)
 app.use('/api/users',userRoute)
+app.use(cors())
 
 app.get("/", (req,res) => {
     res.send("Hello World")
