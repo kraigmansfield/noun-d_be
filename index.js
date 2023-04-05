@@ -18,13 +18,13 @@ app.use(express.urlencoded({extended: true}));
 
 
 
-mongoose.connect(process.env.MONGO_CONNECTION_STRING,
+mongoose.connect(process.env.MONGO_CONNECTION_STRING || 'mongodb://localhost:27017/myapp',
 {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-},
-    )
+})
     .then(() => {
+        console.log(process.env.MONGO_CONNECTION_STRING)
         console.log('[SUCCESS] Mongo Connected')
     })
 
