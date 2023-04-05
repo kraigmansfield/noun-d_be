@@ -4,13 +4,13 @@ const pinRoute = require('./routes/pins')
 const userRoute = require('./routes/users')
 const cors = require('cors')
 const dotenv = require('dotenv')
-require("dotenv").config()
-dotenv.config()
+require("dotenv").config({ path: '.env'})
+dotenv.config();
 
 
 const app = express();
 app.use(express.json());
-
+app.use(express.urlencoded({extended: true});
 
 mongoose.connect(process.env.MONGO_CONNECTION_STRING,
 {
