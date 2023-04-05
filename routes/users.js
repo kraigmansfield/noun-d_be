@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+require('dotenv').config();
+
 
 // Register a user
 // router.post('https://noun-d-be.herokuapp.com/api/users/register', async(req,res) => {
@@ -17,6 +20,7 @@ router.post('/register', async(req,res) => {
             email: req.body.email,
             password: hashPwd
         })
+            
 
         //Add user to DB
         const userSaved = await newUser.save()
@@ -49,6 +53,8 @@ router.post('/login', async(req,res) => {
             res.status(400).json("Incorrect Credentials")
             }
             else{
+                //Create JWTs
+
                 console.log("Success!")
                 res.status(200).json(user)
             }
