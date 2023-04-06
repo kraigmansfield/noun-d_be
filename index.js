@@ -19,7 +19,7 @@ app.use(express.urlencoded({extended: true}));
 
 
 
-mongoose.connect(process.env.MONGO_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/noun-d_be',
+mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/noun-d_be',
 {
   useNewUrlParser: true,
   useUnifiedTopology: true,
