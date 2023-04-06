@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const pinRoute = require('./routes/pins')
 const userRoute = require('./routes/users')
+const PORT = process.env.PORT || 7800;
 
 const dotenv = require('dotenv')
 dotenv.config({path:__dirname+'/.env'});
@@ -37,5 +38,5 @@ app.get("/", (req,res) => {
 })
 
 app.listen(process.env.PORT || 7800, () => {
-    console.log('[SUCCESS] Backend Server Started')
+    console.log(`[SUCCESS] Backend Server Started on ${PORT}`)
 })
