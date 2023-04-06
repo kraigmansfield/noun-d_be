@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/noun-d_be',
   useUnifiedTopology: true,
 })
     .then(() => {
-        console.log(process.env.MONGO_CONNECTION_STRING)
+        console.log(process.env.MONGO_URI)
         console.log('[SUCCESS] Mongo Connected')
     })
 
