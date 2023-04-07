@@ -33,9 +33,6 @@ app.use('/api/pins',pinRoute)
 app.use('/api/users',userRoute)
 app.use(cors())
 
-app.get("/", (req,res) => {
-    res.send("Hello World")
-})
 
 app.listen(process.env.PORT || 7800, () => {
     console.log(`[SUCCESS] Backend Server Started on ${PORT}`)
