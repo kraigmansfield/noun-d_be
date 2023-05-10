@@ -52,17 +52,9 @@ router.post('/login', async(req,res) => {
             res.status(400).json("Incorrect Credentials")
             }
             else{
-                //Create JWTs
-                const token = jwt.sign({
-                    id:user.id,
-                    username: user.username
-                },process.env.JWT_SECRET,{
-                    expiresIn:"2h"
-                })
-                console.log(token)
+                console.log(user)
                 res.status(200).json(
                     {
-                    token:token,
                     user:user
                 }
                 )
