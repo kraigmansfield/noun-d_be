@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO_URI,
   useUnifiedTopology: true,
 })
     .then(() => {
-        console.log(process.env.MONGO_URI)
+        // console.log(process.env.MONGO_URI)
         console.log('[SUCCESS] Mongo Connected')
     })
 
