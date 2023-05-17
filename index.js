@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const pinRoute = require('./routes/pins')
 const userRoute = require('./routes/users')
+const uri = process.env.MONGODB_URI;
 const PORT = process.env.PORT || 7800;
 
 const dotenv = require('dotenv')
