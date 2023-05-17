@@ -4,8 +4,8 @@ const router = require('express').Router();
 const Pin = require('../models/Pin');
 
 //Add a pin
-// router.post('https://noun-d-be.herokuapp.com/api/pins/', async(req,res) => {
-router.post('/', async(req,res) => {
+router.post('https://noun-d-be.herokuapp.com/api/pins/', async(req,res) => {
+// router.post('/', async(req,res) => {
     const newPin = new Pin(req.body)
 
     try{
@@ -19,8 +19,8 @@ router.post('/', async(req,res) => {
 })
 
 //Get all pins
-// router.get('https://noun-d-be.herokuapp.com/api/pins/', async(req,res) => {
-router.get('/', async(req,res) => {
+router.get('https://noun-d-be.herokuapp.com/api/pins/', async(req,res) => {
+// router.get('/', async(req,res) => {
 
     try{
         const pins = await Pin.find()
