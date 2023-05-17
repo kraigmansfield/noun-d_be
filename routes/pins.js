@@ -19,8 +19,8 @@ router.post('https://noun-d-be.herokuapp.com/api/pins/', async(req,res) => {
 })
 
 //Get all pins
-router.get('https://noun-d-be.herokuapp.com/api/pins/', async(req,res) => {
-// router.get('/', async(req,res) => {
+// router.get('https://noun-d-be.herokuapp.com/api/pins/', async(req,res) => {
+router.get('/', async(req,res) => {
 
     try{
         const pins = await Pin.find()
