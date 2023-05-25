@@ -2,11 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const pinRoute = require('./routes/pins')
 const userRoute = require('./routes/users')
-const uri = process.env.MONGODB_URI;
+// const uri = process.env.MONGODB_URI;
+const dotenv = require('dotenv')
 const PORT = process.env.PORT || 7800;
 
-const dotenv = require('dotenv')
-dotenv.config({path:__dirname+'/.env'});
 
 
 const cors = require('cors')
@@ -20,7 +19,7 @@ app.use(express.urlencoded({extended: true}));
 
 
 
-mongoose.connect(MONGODB_URI,
+mongoose.connect(process.env.MONGODB_URI,
 {
   useNewUrlParser: true,
   useUnifiedTopology: true,
