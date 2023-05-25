@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt')
 require('dotenv').config()
 
 // Register a user
-router.post('https://nound.herokuapp.com/api/users/register', async(req,res) => {
-// router.post('/register', async (req, res) => {
+// router.post('https://nound.herokuapp.com/api/users/register', async(req,res) => {
+router.post('/register', async (req, res) => {
   try {
     //Make a password
     const salt = await bcrypt.genSalt(4)
@@ -29,8 +29,8 @@ router.post('https://nound.herokuapp.com/api/users/register', async(req,res) => 
 })
 
 // Login as a user
-router.post('https://nound.herokuapp.com/api/users/login', async(req,res) => {
-// router.post('/login', async (req, res) => {
+// router.post('https://nound.herokuapp.com/api/users/login', async(req,res) => {
+router.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username })
 
