@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { ObjectId } = require('mongodb');
 const Pin = require('../models/Pin');
 
 //Add a pin
@@ -29,5 +30,17 @@ router.get('/', async(req,res) => {
         res.status(500).json(err)
     }
 })
+
+// Delete Pins
+router.delete('/:id', async (req, res) => {
+    try {
+        const deletePin = await Pin.deleteOne({ _id: ObjectId(req.params.id) });
+        res.status(200).json(deletePin);
+        console.log(req.params.id);
+    } catch (err) {
+        console.log("An error occurred");
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router
